@@ -8,8 +8,19 @@ const rockDiv = document.getElementById("r");
 const paperDiv = document.getElementById("p");
 const scissorsDiv = document.getElementById("s");
 
+/**Makes the computer choose between one of the
+ * 3 given parameters
+ */
+function getComputerChoice(){
+    const choices = ["r", "p", "s"];
+    const randomNumber = Math.floor(Math.random() * 3);
+    return choices[randomNumber];
+}
+const computerChoice = getComputerChoice();
+console.log(computerChoice);
+
 function game(userChoice){
-    console.log(":poop ")
+    console.log(":poop" + userChoice);
 }
 function main(){
 rockDiv.addEventListener("click", function(){
