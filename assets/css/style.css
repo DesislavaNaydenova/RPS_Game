@@ -1,0 +1,77 @@
+/* --------- Global style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #fcf2f0;
+    font-family: sans-serif;
+    color: #252120;
+    text-align: center;
+}
+
+/* --------- Header */
+
+header {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+   }
+
+.score-field  {
+    border: 3px solid #252120 ;
+    width: 7.5rem;
+    margin: 0.5rem auto;
+    font-size: 4rem;
+    border-radius: 10px;
+    padding: 0.2rem;
+    position: relative;
+}
+.badge {
+    background: red;
+    color: #fcf2f0;
+    font-size: 1rem;
+    padding: 0.2rem 2rem;
+   
+}
+#user-label{
+    position: absolute;
+    top: 1.5rem;
+    left: -5.75rem;
+    border-radius: 8px;
+    width: 6rem;
+}
+#comp-label{
+    position: absolute;
+    top: 1.5rem;
+    right: -5.75rem;
+    border-radius: 8px;
+    width: 6rem;
+    }
+.result{
+    font-size:2.5rem ;
+    font-weight: 750;
+}  
+
+.choices {
+    padding: auto;
+    margin-left:auto; 
+    margin-right: 10rem;
+    text-align: center;
+}  
+.choice{
+    display: inline-block;
+   height: 9rem;
+   width: 6rem;
+   margin:auto 4.5rem ;
+     
+}
+.choice:hover {
+    cursor: pointer;
+}
+#action-message{
+    padding: 0.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
