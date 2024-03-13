@@ -1,45 +1,75 @@
-const userScore = 0;
-const compScore = 0;
-const userScoreSpan = document.getElementById("user-label");
-const compScoreSpan = document.getElementById("comp-label");
-const scoreFieldDiv = document.querySelector("score-field");
-const resultDiv = document.getElementsByClassName("result");
+let userScore = 0;
+let compScore = 0;
+let userScoreSpan = document.getElementById("user-score");
+let compScoreSpan = document.getElementById("comp-score");
+let scoreFieldDiv = document.querySelector("score-field");
+let resultDiv = document.getElementsByClassName("result");
 const rockDiv = document.getElementById("r");
 const paperDiv = document.getElementById("p");
 const scissorsDiv = document.getElementById("s");
 
-/**Makes the computer choose between one of the
- * 3 given parameters
+/**Generates a random choice ("r", "p", or "s") for the computer.
  */
 function getComputerChoice(){
     const choices = ["r", "p", "s"];
     const randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
-
-
+/**
+ * Increments the user's score and updates the score display.
+ */
+function win(user, computer){
+    userScore++;
+    userScoreSpan.innerHTML = userScore;
+    compScoreSpan.innerHTML = compScore;
+}
+/**
+ * Increments the computer's score and updates the score display.
+ */
+function lose(){
+    compScore++;
+    userScoreSpan.innerHTML = userScore;
+    compScoreSpan.innerHTML = compScore;
+}
+/**
+ * Updates the score display in case of a draw.
+ */
+function draw(){
+    userScoreSpan.innerHTML = userScore;
+    compScoreSpan.innerHTML = compScore;
+    
+}
+/**
+ * Takes the user's choice ,
+ *  generates the computer's choice,
+ *  and determines the result of the game.
+ */
 function game(userChoice){
     const computerChoice = getComputerChoice();
     switch(userChoice+computerChoice){
         case "sp":
         case "pr":
         case "rs":
-            console.log("User wins!");
+            win(userChoice, computerChoice);
             break;
         case "ps":
         case "rp":
         case "rs":
-            console.log("User looses!");
+            lose(userChoice, computerChoice);
             break;
         case "pp":
         case "rr":
         case "ss":
-            console.log("Even!");
+            draw(userChoice, computerChoice);
             break;
         
     }
 
 }
+/**
+ * Listens to the user's choice when a choice is clicked
+ * and calls the "game" function.
+ */
 function main(){
 rockDiv.addEventListener("click", function(){
     game("r"); 
