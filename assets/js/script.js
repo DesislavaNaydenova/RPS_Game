@@ -2,7 +2,7 @@ let userScore = 0;
 let compScore = 0;
 let userScoreSpan = document.getElementById("user-score");
 let compScoreSpan = document.getElementById("comp-score");
-let scoreFieldDiv = document.querySelector("score-field");
+let scoreFieldDiv = document.querySelector(".score-field");
 let resultP = document.querySelector(".result>p");
 const rockDiv = document.getElementById("r");
 const paperDiv = document.getElementById("p");
@@ -23,7 +23,7 @@ function getComputerChoice(){
 function convertToWord(letter){
     if (letter === "r") return "Rock";
     if (letter === "p") return "Paper";
-    else return "Scissors"
+    else return "Scissors";
 }
 
 /**
@@ -35,18 +35,18 @@ function win(userChoice, computerChoice){
     compScoreSpan.innerHTML = compScore;
     const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
-    resultP.innerHTML= convertToWord(userChoice)+ smallUserWord+ " beats " + convertToWord(computerChoice)+ smallCompWord+". You WIN!!!"
+    resultP.innerHTML= convertToWord(userChoice)+ smallUserWord+ " beats " + convertToWord(computerChoice)+ smallCompWord+". You WIN!!!";
 }
 /**
  * Increments the computer's score and updates the score display.
  */
 function lose(userChoice, computerChoice){
-    compScoreScore++;
+    compScore++;
     userScoreSpan.innerHTML = userScore;
     compScoreSpan.innerHTML = compScore;
     const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
-    resultP.innerHTML= convertToWord(userChoice)+ smallUserWord+ " loses to " + convertToWord(computerChoice)+ smallCompWord+". You lost!!!"
+    resultP.innerHTML= convertToWord(userChoice)+ smallUserWord+ " loses to " + convertToWord(computerChoice)+ smallCompWord+". You lost!!!";
 }
 /**
  * Updates the score display in case of a draw.
@@ -56,7 +56,7 @@ function draw(userChoice, computerChoice){
     compScoreSpan.innerHTML = compScore;
     const smallUserWord = "user".fontsize(3).sup();
     const smallCompWord = "comp".fontsize(3).sup();
-    resultP.innerHTML= convertToWord(userChoice)+ smallUserWord+ " equals " + convertToWord(computerChoice)+ smallCompWord+". DRAW!!!"
+    resultP.innerHTML= convertToWord(userChoice)+ smallUserWord+ " equals " + convertToWord(computerChoice)+ smallCompWord+". DRAW!!!";
     
 }
 /**
@@ -74,7 +74,7 @@ function game(userChoice){
             break;
         case "ps":
         case "rp":
-        case "rs":
+        case "sr":
             lose(userChoice, computerChoice);
             break;
         case "pp":
